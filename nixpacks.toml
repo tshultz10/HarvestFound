@@ -4,10 +4,7 @@ providers = ["node"]
 nixPkgs = ["nodejs_22"]
 
 [phases.install]
-cmds = ["npm install --legacy-peer-deps"]
-
-[phases.build]
-cmds = ["npm run build"]
+cmds = ["npm install --production --legacy-peer-deps"]
 
 [start]
 cmd = "node dist/index.cjs"
