@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* LocalOG — Colorful & Lively Farmers Market Theme */
+    /* Primary: Fresh Leaf Green */
+    --background: 85 40% 96%;
+    --foreground: 85 35% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 85 35% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 85 35% 10%;
+
+    --primary: 142 52% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 38 92% 12%;
+
+    --muted: 85 20% 92%;
+    --muted-foreground: 85 10% 45%;
+
+    --accent: 350 85% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 85 15% 85%;
+    --input: 85 15% 85%;
+    --ring: 142 52% 38%;
+
+    --radius: 0.625rem;
+
+    /* Custom tokens */
+    --color-tomato: #e8403a;
+    --color-carrot: #f07020;
+    --color-sunflower: #f5b800;
+    --color-grass: #2d8a45;
+    --color-sky: #2b7bb9;
+    --color-lavender: #8b5cf6;
+  }
+
+  .dark {
+    --background: 85 30% 7%;
+    --foreground: 85 20% 92%;
+
+    --card: 85 25% 10%;
+    --card-foreground: 85 20% 92%;
+
+    --popover: 85 25% 10%;
+    --popover-foreground: 85 20% 92%;
+
+    --primary: 142 52% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 38 80% 42%;
+    --secondary-foreground: 38 80% 95%;
+
+    --muted: 85 15% 15%;
+    --muted-foreground: 85 10% 60%;
+
+    --accent: 350 75% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 74% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 85 10% 20%;
+    --input: 85 10% 20%;
+    --ring: 142 52% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    min-height: 100dvh;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Chillax', 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+}
+
+/* Category tag colors */
+.cat-produce    { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+.cat-crafts     { background: #ede9fe; color: #5b21b6; border-color: #ddd6fe; }
+.cat-bakery     { background: #fef9c3; color: #854d0e; border-color: #fde68a; }
+.cat-dairy      { background: #e0f2fe; color: #075985; border-color: #bae6fd; }
+.cat-meat       { background: #ffe4e6; color: #9f1239; border-color: #fecdd3; }
+.cat-plants     { background: #d1fae5; color: #065f46; border-color: #a7f3d0; }
+.cat-other      { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+
+.dark .cat-produce    { background: #14532d; color: #86efac; border-color: #166534; }
+.dark .cat-crafts     { background: #2e1065; color: #c4b5fd; border-color: #5b21b6; }
+.dark .cat-bakery     { background: #422006; color: #fde68a; border-color: #854d0e; }
+.dark .cat-dairy      { background: #0c4a6e; color: #7dd3fc; border-color: #075985; }
+.dark .cat-meat       { background: #4c0519; color: #fda4af; border-color: #9f1239; }
+.dark .cat-plants     { background: #022c22; color: #6ee7b7; border-color: #065f46; }
+.dark .cat-other      { background: #451a03; color: #fcd34d; border-color: #92400e; }
+
+/* Lively gradient hero */
+.hero-gradient {
+  background: linear-gradient(135deg, #2d8a45 0%, #4caf50 30%, #8bc34a 55%, #f5b800 80%, #f07020 100%);
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+/* Search bar glow */
+.search-glow:focus-within {
+  box-shadow: 0 0 0 3px rgba(45, 138, 69, 0.25);
+}
+
+/* Season badge */
+.badge-season {
+  background: linear-gradient(90deg, #2d8a45, #4caf50);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
